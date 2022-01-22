@@ -37,7 +37,7 @@ class DocsController < ApplicationController
     def destroy
         @doc = Doc.find(params[:id])
         @doc.destroy
-        redirect_to docs_path, info: "Task deleted", status: :see_other
+        redirect_to docs_path, status: :see_other
    
     end
 
