@@ -1,5 +1,6 @@
 class DocsController < ApplicationController
     before_action :find_doc, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
 
     def index
         @docs = Doc.where(user_id: current_user)
@@ -34,8 +35,10 @@ class DocsController < ApplicationController
     end
 
     def destroy
+        @doc = Doc.find(params[:id])
         @doc.destroy
-            redirect_to docs_path, status: :see_other
+        redirect_to docs_path, info: "Task deleted", status: :see_other
+   
     end
 
     private

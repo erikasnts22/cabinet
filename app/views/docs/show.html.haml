@@ -3,4 +3,5 @@
 
 = link_to "All Documents", docs_path
 = link_to "Update Document", edit_doc_path(@doc)
-= link_to "Trash It", doc_path(@doc), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+= link_to 'Trash It!', docs_delete_path, method: :delete, data: { confirm: 'Are you sure?' }
+= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }

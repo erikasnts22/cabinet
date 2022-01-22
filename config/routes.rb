@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+
+  delete 'docs/:id/delete' => 'docs#destroy', as: 'docs_delete'
+  get '/docs/:id/delete' => 'docs#destroy'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
