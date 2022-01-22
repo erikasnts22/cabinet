@@ -3,7 +3,7 @@
         <div class="d-flex flex-grow-1">
             <span class="w-100 d-lg-none d-block">
                 <!-- hidden spacer to center brand on mobile --></span>
-           <%= link_to "File Manager", root_path, :class => "navbar-brand" %>
+           <%= link_to "Notes Cabinet", root_path, :class => "navbar-brand" %>
             <div class="w-100 text-right">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar7">
                     <span class="navbar-toggler-icon"></span>
@@ -15,8 +15,8 @@
             <ul class="navbar-nav ms-auto flex-nowrap">
 
                 <% if user_signed_in?%>
-                    <li class="nav-item"><%= link_to "Create Document", new_doc_path, :class => "nav-link" %></li>
-                    <li class="nav-item"><%= link_to "Files", docs_path, :class => "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "Create Notes", new_doc_path, :class => "nav-link" %></li>
+                    <li class="nav-item"><%= link_to "My Notes", docs_path, :class => "nav-link" %></li>
                     <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo: "false" }, class: "nav-link" %></li>
                 <% else %>
                     <li class="nav-item"><a href="#" class="nav-link">About</a></li>
